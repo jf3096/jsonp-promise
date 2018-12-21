@@ -1,4 +1,4 @@
-const shortHash = require('short-hash');
+var shortHash = require('short-hash');
 
 /**
  * MIT license
@@ -40,7 +40,7 @@ var jsonp = function(url, options) {
     // Generate a unique id for the request.
     if (!id) {
         if (uniqueGenMethod === 'hash') {
-            id = shortHash(url);
+            id = '____' + shortHash(url);
         } else {
             id = prefix + (count++);
         }
