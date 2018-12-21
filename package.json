@@ -1,6 +1,6 @@
 {
-  "name": "jsonp-promise",
-  "version": "0.1.2",
+  "name": "jsonp-promise-enhance",
+  "version": "0.0.1",
   "description": "Jsonp es6 implementation that returns a promise.",
   "main": "index.js",
   "keywords": [
@@ -12,7 +12,10 @@
   "author": "Alex Bardas",
   "license": "MIT",
   "repository": {
-      "type": "git",
-      "url": "https://github.com/alexbardas/jsonp-promise.git"
+    "type": "git",
+    "url": "https://github.com/alexbardas/jsonp-promise.git"
+  },
+  "dependencies": {
+    "short-hash": "^1.0.0"
   }
 }

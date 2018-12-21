@@ -1,4 +1,11 @@
-# jsonp-promise
+# jsonp-promise-enhance
+
+### FORK
+
+1. added short hash rather than self incremental callback param
+
+### Description
+
 A simple JSONP es6 implementation (inspired from `https://github.com/webmodules/jsonp`) which returns an object containing a promise, so it can be used by generators and async functions.
 
 It's supposed to be used with an es6 module loader. Works great with jspm/systemjs for cross-browser compatibility.

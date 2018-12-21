@@ -1,3 +1,5 @@
+const shortHash = require('short-hash');
+
 /**
  * MIT license
  */
@@ -24,16 +26,25 @@ var jsonp = function(url, options) {
     var prefix = options.prefix || '__jp';
     var param = options.param || 'callback';
     var timeout = options.timeout ? options.timeout : 15000;
+    var id = options.id;
     var target = document.getElementsByTagName('script')[0] || document.head;
     var script;
     var timer;
     var cleanup;
     var cancel;
     var promise;
-    var noop = function() {};
+    var uniqueGenMethod = options.uniqueGenMethod || 'incremental';
+    var noop = function() {
+    };
 
     // Generate a unique id for the request.
-    var id = prefix + (count++);
+    if (!id) {
+        if (uniqueGenMethod === 'hash') {
+            id = shortHash(url);
+        } else {
+            id = prefix + (count++);
+        }
+    }
 
     cleanup = function() {
         // Remove the script tag.
